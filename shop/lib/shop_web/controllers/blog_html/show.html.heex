@@ -1,0 +1,15 @@
+<div class="px-10 py-5 space-y-10">
+  <div class="flex justify-start w-full border-b border-gray-200 shadow-md rounded-l-lg">
+    <a href="/blogs">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-l-lg">All Blogs</button>
+    </a>
+  </div>
+  <div class="space-y-5">
+    <div class="rounded-lg shadow-md">
+      <img src={@blog.img} alt="Blog Image" class="w-full h-96 object-cover rounded-lg">
+    </div>
+    <span class="text-gray-600 text-xs"><%= @blog.date_creation %></span>
+    <h1 class="text-3xl font-bold"><%= @blog.title %></h1>
+    <article class="text-gray-600 py-4"><%= @blog.description %></article>
+  </div>
+</div>
