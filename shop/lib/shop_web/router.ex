@@ -23,6 +23,8 @@ defmodule ShopWeb.Router do
     get "/", PageController, :home
     get "/products", ProductController, :index
     get "/products/:id", ProductController, :show
+    get "/blogs", BlogController, :index
+    get "/blogs/:id", BlogController, :show
   end
 
   # Other scopes may use custom stacks.

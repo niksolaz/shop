@@ -1,0 +1,22 @@
+<div class="px-10 py-5">
+  <h1 class="text-3xl font-medium py-10">Welcome to the Blog Page</h1>
+  <div class="grid grid-cols-3 gap-4">
+    <%= for blog <- @blogs do %>
+      <div class="bg-white rounded-lg border border-gray-200 shadow-md transition duration-300 hover:shadow-lg hover:border-gray-300 hover:shadow-orange-300">
+        <a href={"/blogs/#{blog.id}?title=#{blog.title}"}>
+          <div>
+            <div class="w-full">
+              <img class="object-cover rounded-t-lg shadow-md" src={blog.img} alt="Blog Image">
+            </div>
+            <div class="p-4">
+              <span class="text-gray-600 text-xs"><%= blog.date_creation %></span>
+              <h2 class="text-lg font-medium"><%= blog.title %></h2>
+              <p class="text-gray-600 truncate"><%=blog.description %></p>
+            </div>
+            <button class="w-full bg-orange-500 text-white px-4 py-2 rounded-b-lg">Read More</button>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
