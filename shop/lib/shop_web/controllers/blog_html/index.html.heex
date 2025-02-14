@@ -1,12 +1,12 @@
 <div class="px-10 py-5">
   <h1 class="text-3xl font-medium py-10">Welcome to the Blog Page</h1>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <%= for blog <- @blogs do %>
       <div class="bg-white rounded-lg border border-gray-200 shadow-md transition duration-300 hover:shadow-lg hover:border-gray-300 hover:shadow-orange-300">
-        <a href={"/blogs/#{blog.id}?title=#{blog.title}"}>
+        <a href={~p"/blogs/#{blog.id}?title=#{blog.title}"}>
           <div>
             <div class="w-full">
-              <img class="object-cover rounded-t-lg shadow-md" src={blog.img} alt="Blog Image">
+              <img class="object-cover rounded-t-lg shadow-md h-48 w-full" src={blog.img} alt="Blog Image">
             </div>
             <div class="p-4">
               <span class="text-gray-600 text-xs"><%= blog.date_creation %></span>
