@@ -17,14 +17,21 @@ defmodule ShopWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # pipeline :auth do
+  #   plug Plugs.EnsureAuthenticated
+  # end
+
   scope "/", ShopWeb do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/products", ProductController, :index
-    get "/products/:id", ProductController, :show
-    get "/blogs", BlogController, :index
-    get "/blogs/:id", BlogController, :show
+    # get "/products", ProductController, :index
+    # get "/products/:id", ProductController, :show
+    # get "/blogs", BlogController, :index
+    # get "/blogs/:id", BlogController, :show
+
+    resources "/products", ProductController, only: [:index, :show]
+    resources "/blogs", BlogController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
