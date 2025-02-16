@@ -9,7 +9,10 @@
               <img class="object-cover rounded-t-lg shadow-md h-48 w-full" src={blog.img} alt="Blog Image">
             </div>
             <div class="p-4">
-              <span class="text-gray-600 text-xs"><%= blog.date_creation %></span>
+              <span class="text-gray-600 text-xs">
+                <%= if blog.date_creation.day < 10 do "0#{blog.date_creation.day}" else blog.date_creation.day end %>/<%= if blog.date_creation.month < 10 do "0#{blog.date_creation.month}" else blog.date_creation.month end %>/<%= blog.date_creation.year %>
+                <%= if blog.date_creation.hour < 10 do "0#{blog.date_creation.hour}" else blog.date_creation.hour end %>:<%= if blog.date_creation.minute < 10 do "0#{blog.date_creation.minute}" else blog.date_creation.minute end %>
+              </span>
               <h2 class="text-lg font-medium"><%= blog.title %></h2>
               <p class="text-gray-600 truncate"><%=blog.description %></p>
             </div>
