@@ -558,10 +558,10 @@ defmodule ShopWeb.CoreComponents do
 
   def back(assigns) do
     ~H"""
-    <div class="mt-16">
+    <div class="bg-orange-500 px-4 py-2 rounded-l-lg hover:bg-orange-600 text-white hover:text-gray-200">
       <.link
         navigate={@navigate}
-        class="text-sm font-semibold leading-6 text-zinc-900 hover:text-zinc-700"
+        class="text-lg font-medium leading-6"
       >
         <.icon name="hero-arrow-left-solid" class="h-3 w-3" />
         {render_slot(@inner_block)}
