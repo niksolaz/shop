@@ -4,10 +4,10 @@
     <div class="rounded-lg shadow-md">
       <img src={@blog.img} alt="Blog Image" class="w-full h-96 object-cover rounded-lg">
     </div>
-    <span class="text-gray-600 text-xs">
+    <%!-- <span class="text-gray-600 text-xs">
       <%= if @blog.date_creation.day < 10 do "0#{@blog.date_creation.day}" else @blog.date_creation.day end %>/<%= if @blog.date_creation.month < 10 do "0#{@blog.date_creation.month}" else @blog.date_creation.month end %>/<%= @blog.date_creation.year %>
       <%= if @blog.date_creation.hour < 10 do "0#{@blog.date_creation.hour}" else @blog.date_creation.hour end %>:<%= if @blog.date_creation.minute < 10 do "0#{@blog.date_creation.minute}" else @blog.date_creation.minute end %>
-    </span>
+    </span> --%>
     <h1 class="text-3xl font-bold"><%= @blog.title %></h1>
     <article class="text-gray-600 py-4"><%= @blog.description %></article>
   </div>
