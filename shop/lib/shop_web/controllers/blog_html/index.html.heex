@@ -1,5 +1,10 @@
 <div class="px-10 py-5">
-  <h1 class="text-3xl font-medium py-10">Welcome to the Blog Page</h1>
+  <div class="flex justify-between items-center text-xl py-10"> 
+    <h1 class="text-3xl font-medium py-10">Welcome to the Blog Page</h1>
+    <.button>
+      <.link href={~p"/blogs/new"}>Nuovo Blog</.link>
+    </.button>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <%= for blog <- @blogs do %>
       <div class="bg-white rounded-lg border border-gray-200 shadow-md transition duration-300 hover:shadow-lg hover:border-gray-300 hover:shadow-orange-300">
