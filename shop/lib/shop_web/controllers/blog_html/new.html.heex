@@ -1,0 +1,15 @@
+<div class="px-10 py-5 space-y-10">
+  <div class="space-y-5">
+    <h1>Nuovo Blog</h1>
+
+    <.simple_form for={@form} action={~p"/blogs"}>
+      <.input field={@form[:title]} label="Titolo" />
+      <.input field={@form[:description]} label="Descrizione" />
+      <.input field={@form[:slug]} label="Slug" />
+      <.input field={@form[:img]} label="URL Immagine" />
+      <.button type="submit">Crea Blog</.button>
+    </.simple_form>
+
+    <.back navigate={~p"/blogs"}>Back to blogs</.back>
+  </div>
+</div>

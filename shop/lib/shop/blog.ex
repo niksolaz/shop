@@ -18,5 +18,4 @@ defmodule Shop.Blog do
     |> validate_required([:title, :description, :slug, :img])
     |> unique_constraint(:slug)
   end
-
 end
