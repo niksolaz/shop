@@ -1,6 +1,7 @@
 defmodule Shop.Blog do
   use Ecto.Schema
   import Ecto.Changeset
+  @derive {Jason.Encoder, only: [:title, :description, :slug, :img]}
 
   schema "blogs" do
     field :description, :string
