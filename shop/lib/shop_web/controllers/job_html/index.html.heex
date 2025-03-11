@@ -1,0 +1,41 @@
+<.header>
+  Listing Jobs
+  <:actions>
+    <.link href={~p"/jobs/new"}>
+      <.button>New Job</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="jobs" rows={@jobs} row_click={&JS.navigate(~p"/jobs/#{&1}")}>
+  <:col :let={job} label="Logo">
+    <img src={job.logo} width="100" height="100" />
+  </:col>
+  <:col :let={job} label="Name">
+    <span class="text-sm font-bold">{job.name}</span>
+  </:col>
+  <:col :let={job} label="Description">
+    <div class="text-sm w-72">{job.description}</div>
+  </:col>
+  <:col :let={job} label="Role">
+    <p class="text-sm w-40">{job.role}</p>
+  </:col>
+  <:col :let={job} label="Is actual present">
+    <p class="text-sm">{if job.is_actual_present, do: "Presente", else: "Concluso"}</p>
+  </:col>
+  <:col :let={job} label="Start date">
+    <p class="text-sm">{Calendar.strftime(job.start_date, "%d/%m/%Y")}</p>
+  </:col>
+  <:col :let={job} label="End date">{Calendar.strftime(job.end_date, "%d/%m/%Y")}</:col>
+  <:action :let={job}>
+    <div class="sr-only">
+      <.link navigate={~p"/jobs/#{job}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/jobs/#{job}/edit"}><span class="text-green-600">Edit</span></.link>
+  </:action>
+  <:action :let={job}>
+    <.link href={~p"/jobs/#{job}"} method="delete" data-confirm="Are you sure?">
+      <span class="text-red-600">Delete</span>
+    </.link>
+  </:action>
+</.table>

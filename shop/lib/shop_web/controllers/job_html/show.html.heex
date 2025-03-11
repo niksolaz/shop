@@ -1,0 +1,21 @@
+<.header>
+  Job {@job.id}
+  <:subtitle>This is a job record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/jobs/#{@job}/edit"}>
+      <.button>Edit job</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name">{@job.name}</:item>
+  <:item title="Description">{@job.description}</:item>
+  <:item title="Role">{@job.role}</:item>
+  <:item title="Is actual present">{@job.is_actual_present}</:item>
+  <:item title="Logo">{@job.logo}</:item>
+  <:item title="Start date">{@job.start_date}</:item>
+  <:item title="End date">{@job.end_date}</:item>
+</.list>
+
+<.back navigate={~p"/jobs"}>Back to jobs</.back>
