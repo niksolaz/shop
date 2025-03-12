@@ -37,7 +37,8 @@ defmodule ShopWeb.Router do
   scope "/api", ShopWeb do
     pipe_through :api
 
-    get "/blogs",  ApiController, :index
+    # Market API
+    resources "/markets", MarketController, except: [:new, :edit]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
