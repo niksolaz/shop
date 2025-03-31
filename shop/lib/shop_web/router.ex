@@ -34,6 +34,10 @@ defmodule ShopWeb.Router do
     resources "/products", ProductController, only: [:index, :show]
     resources "/blogs", BlogController
     resources "/jobs", JobController
+
+    live "/product-live", ProductLive.Index
+
+    live "/jobs-live", JobLive.Index
   end
 
   # Other scopes may use custom stacks.
